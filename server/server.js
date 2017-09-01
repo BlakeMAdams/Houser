@@ -56,7 +56,7 @@ app.post('/api/auth/logout', user.logout)
 
 //PROPERTIES ENDPOINTS
 app.put('/api/updateNewHousing', housingCtrl.updateNewHousing);
-app.get('/api/newHousing', housingCtrl.newHousing);
+app.get('/api/newHousing', housingCtrl.newHousing);  // returns req.session.housing
 app.post('/api/properties', housingCtrl.addProperty); // add new properties
 app.get('/api/properties', housingCtrl.getAllProperties); // gets all properties
 app.delete('/api/properties/:id', housingCtrl.deleteProperty); // delete property  based on param

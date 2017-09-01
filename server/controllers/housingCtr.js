@@ -2,18 +2,18 @@ module.exports = {
     initSession : function(req, res, next){
         if(!req.session.housing){
             //comment out just for testing
-            // req.session.userId = 1;
+            req.session.userId = 1;
             req.session.housing = {
-                name: null,
-                description: null,
-                address: null,
-                city : null,
-                state: null,
-                zip: null,
-                image: null,
-                loan: null,
-                mortage: null,
-                rent: null
+                name: '',
+                description: '',
+                address: '',
+                city : '',
+                state: '',
+                zip: '',
+                image: '',
+                loan: 0,
+                mortage: 0,
+                rent: 0
 
             }
             
@@ -21,6 +21,7 @@ module.exports = {
         next();
     },
     updateNewHousing: function(req, res, next){
+		console.log(req.body);
         req.session.housing = Object.assign(req.session.housing, req.body);
         res.status(200).send(req.session.housing)
     },
