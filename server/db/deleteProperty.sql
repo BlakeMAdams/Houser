@@ -1,0 +1,1 @@
+ DELETE FROM properties where id = $1;
